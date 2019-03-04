@@ -18,6 +18,26 @@ import uk.ac.ebi.jmzidml.model.mzidml.SpectraData;
 import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentification;
 import uk.ac.ebi.jmzidml.model.mzidml.SpectrumIdentificationProtocol;
 
+import uk.ac.ebi.jpepxml.model.pepxml.MsmsPipelineAnalysis;
+import uk.ac.ebi.jpepxml.model.pepxml.PeptideprophetSummary;
+import uk.ac.ebi.jpepxml.model.pepxml.InterprophetSummary;
+import uk.ac.ebi.jpepxml.model.pepxml.PeptideprophetSummary;
+import uk.ac.ebi.jpepxml.model.pepxml.AsapratioSummary;
+import uk.ac.ebi.jpepxml.model.pepxml.XpressratioSummary;
+import uk.ac.ebi.jpepxml.model.pepxml.PeptideprophetResult;
+import uk.ac.ebi.jpepxml.model.pepxml.InterprophetResult;
+import uk.ac.ebi.jpepxml.model.pepxml.AsapratioResult;
+import uk.ac.ebi.jpepxml.model.pepxml.AsapratioPeptideData;
+import uk.ac.ebi.jpepxml.model.pepxml.AsapratioContribution;
+import uk.ac.ebi.jpepxml.model.pepxml.AsapratioLcLightpeak;
+import uk.ac.ebi.jpepxml.model.pepxml.AsapratioLcHeavypeak;
+import uk.ac.ebi.jpepxml.model.pepxml.DatabaseRefreshTimestamp;
+import uk.ac.ebi.jpepxml.model.pepxml.XpressratioTimestamp;
+import uk.ac.ebi.jpepxml.model.pepxml.AsapratioTimestamp;
+import uk.ac.ebi.jpepxml.model.pepxml.XpressratioResult;
+import uk.ac.ebi.jpepxml.model.pepxml.InteractSummary;
+import uk.ac.ebi.jpepxml.model.pepxml.LibraResult;
+import uk.ac.ebi.jpepxml.model.pepxml.LibraSummary;
 
 /**
  * File containing input for the intermediate structure.
@@ -46,7 +66,27 @@ public class PIAInputFile implements Serializable {
 
     /** the AnalysisProtocolCollection (same as in mzIdentML) */
     private AnalysisProtocolCollection analysisProtocolCollection;
-
+    
+    private MsmsPipelineAnalysis msmsPipelineAnalysis
+    private PeptideprophetSummary peptideprophetSummary;
+	private InterprophetSummary interprophetSummary;
+	private PeptideprophetSummary peptideprophetSummary;
+	private AsapratioSummary asapratioSummary;
+	private XpressratioSummary xpressratioSummary;
+	private PeptideprophetResult peptideprophetResult;
+	private InterprophetResult interprophetResult;
+	private AsapratioResult asapratioResult;
+	private AsapratioPeptideData asapratioPeptideData;
+	private AsapratioContribution asapratioContribution;
+	private AsapratioLcLightpeak asapratioLcLightpeak;
+	private AsapratioLcHeavypeak asapratioLcHeavypeak;
+	private DatabaseRefreshTimestamp databaseRefreshTimestamp;
+	private XpressratioTimestamp xpressratioTimestamp;
+	private AsapratioTimestamp asapratioTimestamp;
+	private XpressratioResult xpressratioResult;
+	private InteractSummary interactSummary;
+	private LibraResult libraResult;
+	private LibraSummary libraSummary;
 
 
     public PIAInputFile(long id, String name, String filename, String format) {
@@ -56,6 +96,26 @@ public class PIAInputFile implements Serializable {
         this.format = format;
         this.analysisCollection = new AnalysisCollection();
         this.analysisProtocolCollection = new AnalysisProtocolCollection();
+	    this.msmsPipelineAnalysis = new MsmsPipelineAnalysis();
+	    this.peptideprophetSummary = PeptideprophetSummary();
+		this.interprophetSummary = InterprophetSummary();
+		this.peptideprophetSummary = PeptideprophetSummary();
+		this.asapratioSummary = AsapratioSummary();
+		this.xpressratioSummary = XpressratioSummary();
+		this.peptideprophetResult = PeptideprophetResult();
+		this.interprophetResult = InterprophetResult();
+		this.asapratioResult = AsapratioResult();
+		this.asapratioPeptideData = AsapratioPeptideData();
+		this.asapratioContribution = AsapratioContribution();
+		this.asapratioLcLightpeak = AsapratioLcLightpeak();
+		this.asapratioLcHeavypeak = AsapratioLcHeavypeak();
+		this.databaseRefreshTimestamp = DatabaseRefreshTimestamp();
+		this.xpressratioTimestamp = XpressratioTimestamp();
+		this.asapratioTimestamp = AsapratioTimestamp();
+		this.xpressratioResult = XpressratioResult();
+		this.interactSummary = InteractSummary();
+		this.libraResult = LibraResult();
+		this.libraSummary = LibraSummary();
     }
 
     @Override
